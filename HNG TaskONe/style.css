@@ -1,0 +1,107 @@
+body {
+  background-color: rgba(194, 188, 188, 0.425);
+}
+
+h1 {
+  text-align: center;
+  background-color: black;
+  color: aliceblue;
+}
+
+.mainContainer {
+  border: solid;
+  border-color: #6e5494;
+  border-width: 2px;
+  border-radius: 4px;
+  margin-left: 300px;
+  width: 20cm;
+  height: 14cm;
+  box-shadow: 2px 2px 10px #6e5494;
+  background-color: white;
+}
+
+.image{
+  display: flex;
+  justify-content: center;
+}
+.image img {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  margin-top: 1cm;
+  
+}
+
+.name h3 {
+  text-align: center;
+  margin-top: 10px;
+  font-family: Georgia, Times, serif;
+  margin-bottom: 0cm;
+}
+
+.track h3 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: Arial;
+  font-size: small;
+  font-weight: bold;
+  color: rgb(73, 73, 55);
+  margin-top: 0cm;
+}
+
+[data-testid="githubURL"] {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0cm;
+}
+
+[data-testid="githubURL"] button {
+  background-color: #6e5494;
+  color: white;
+  width: 3cm;
+  height: 1cm;
+  border: none;
+  border-radius: 5cm;
+  font-weight: bold;
+  font-family: arial;
+  cursor: pointer;
+}
+[data-testid="githubURL"] button:hover {
+  background-color: white;
+  color: #6e5494;
+  border: solid;
+  border-width: 2px;
+  border-color: #6e5494;
+}
+
+.doW {
+  font-size: large;
+  font-weight: bold;
+  margin-left: 5cm;
+  color: gray;
+}
+
+.time {
+  font-size: large;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  
+  .mainContainer {
+    border: none;
+    border-radius: 4px;
+    margin-left: 5px;
+    width: 19.7cm;
+    height: 20cm;
+    box-shadow: 2px 2px 12px rgba(34, 35, 36, 0.123);
+    background-color: white;
+  }
+
+  h1 {
+    width: 20cm;
+  }
+}
