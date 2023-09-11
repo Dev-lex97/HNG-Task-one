@@ -1,24 +1,39 @@
-function updateDateTime() {
-  // create a new `Date` object
-  const now = new Date();
-  const currentDateTime = Date.UTC(2023);
-document.querySelector('[data-testid="currentUTCTime"]').textContent = currentDateTime;
+function updateCurrentDayOfTheWeek() {
+    const daysOfWeek = [
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+    ];
+    const currentDate = new Date();
+    const options = { weekday: 'long', timeZone: 'Africa/Lagos' }; // Nigeria's time zone
+    const currentDay = new Intl.DateTimeFormat('en-US', options).format(
+        currentDate
+    );
+    document.querySelector('[data-testid="currentDayOfTheWeek"]').textContent = 'Today is: ' + currentDay;
 }
 
-setInterval(updateDateTime, 1000);
+// Initial update
+updateCurrentDayOfTheWeek();
 
-// Function to display the day of the week
-const daysOfTheWeek = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
+// Update the current day of the week every 24 hours
+setInterval(updateCurrentDayOfTheWeek, 86400000);
 
-  const day = new Date().getDay();
-    document.querySelector('[data-testid="currentUTCTime"]').textContent = daysOfTheWeek[day];
+// Function to update the current local time in Nigeria (WAT time zone)
+function updateCurrentLocalTime() {
+    const currentDate = new Date();
+    const options = { timeZone: 'Africa/Lagos' }; // Nigeria's time zone
+    const localTime = currentDate.toLocaleTimeString('en-US', options);
+    const utcTimeMilliseconds = currentDate.getTime(); // Get UTC time in milliseconds
+    document.querySelector('[data-testid="currentUTCTime"]').textContent =
+        'Local Time: ' + localTime + ' | UTC Time (ms): ' + utcTimeMilliseconds;
+}
 
-//function expression to update time
+// Initial update
+updateCurrentLocalTime();
+
+// Update the current local time every second
+setInterval(updateCurrentLocalTime, 1000);
