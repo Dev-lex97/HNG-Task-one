@@ -34,14 +34,13 @@ h1 {
   
 }
 
-.name h3 {
+[data-testid="slackUserName"] h3 {
   text-align: center;
   margin-top: 10px;
   font-family: Georgia, Times, serif;
   margin-bottom: 0cm;
 }
-
-.track h3 {
+[data-testid="myTrack"] h3 {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -108,3 +107,4 @@ h1 {
     width: 100%;
   }
 }
+
